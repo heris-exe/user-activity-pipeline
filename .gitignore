@@ -1,0 +1,9 @@
+node_modules/
+.next/
+out/
+coverage/
+dist/
+.DS_Store
+.ipynb_checkpoints/
+next-env.d.ts
+*.tsbuildinfo
