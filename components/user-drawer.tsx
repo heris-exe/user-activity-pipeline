@@ -46,7 +46,7 @@ export function UserDrawer({ user, onClose }: UserDrawerProps) {
   );
 
   const contributionRows = [
-    { key: "purchase", label: "purchase", color: "var(--flame)" },
+    { key: "normalizedPurchaseAmount", label: "purchase", color: "var(--flame)" },
     { key: "normalizedSessionDuration", label: "session_dur", color: "var(--gold)" },
     { key: "normalizedPagesViewed", label: "pages_viewed", color: "var(--forest)" },
     { key: "pagesPerSecond", label: "pages_per_sec", color: "var(--denim)" },
