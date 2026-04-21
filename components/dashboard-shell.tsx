@@ -162,9 +162,9 @@ export function DashboardShell({ snapshot }: DashboardShellProps) {
 
   return (
     <>
-      <main className="mx-auto max-w-[1760px] px-0 xl:px-4">
+      <main className="mx-auto max-w-[1760px] px-2 sm:px-3 xl:px-4">
         <div className="grid min-h-screen gap-0 xl:grid-cols-[280px_minmax(0,1fr)]">
-          <aside className="border-b border-[var(--line)] bg-[linear-gradient(180deg,rgba(255,255,255,0.4),rgba(255,255,255,0)_30%),var(--paper)] px-5 py-6 xl:sticky xl:top-0 xl:h-screen xl:overflow-auto xl:border-b-0 xl:border-r xl:px-6">
+          <aside className="border-b border-[var(--line)] bg-[linear-gradient(180deg,rgba(255,255,255,0.4),rgba(255,255,255,0)_30%),var(--paper)] px-4 py-5 sm:px-5 sm:py-6 xl:sticky xl:top-0 xl:h-screen xl:overflow-auto xl:border-b-0 xl:border-r xl:px-6">
             <div className="flex items-end gap-3">
               <div className="grid h-8 w-8 place-items-center rounded-[6px] bg-[var(--ink)] font-mono-ui text-[0.8rem] font-semibold text-[var(--accent)]">
                 S
@@ -311,7 +311,7 @@ export function DashboardShell({ snapshot }: DashboardShellProps) {
             </div>
           </aside>
 
-          <main className="min-w-0 px-4 py-5 md:px-6 xl:px-7 xl:py-6">
+          <main className="min-w-0 px-3 py-4 sm:px-4 sm:py-5 md:px-6 xl:px-7 xl:py-6">
             <div className="mb-6 flex flex-col gap-3 border-b border-[var(--line-soft)] pb-4 font-mono-ui text-[0.68rem] text-[var(--muted)] lg:flex-row lg:items-center lg:justify-between">
               <div>
                 Workspace <span className="mx-2 text-[var(--line)]">/</span> Analytics
@@ -330,7 +330,7 @@ export function DashboardShell({ snapshot }: DashboardShellProps) {
 
             <section
               id="overview"
-              className="ink-panel animate-enter overflow-hidden rounded-[18px] px-6 py-7 md:px-8"
+              className="ink-panel animate-enter overflow-hidden rounded-[16px] px-4 py-5 sm:px-5 sm:py-6 md:rounded-[18px] md:px-8 md:py-7"
             >
               <div className="mb-5 flex flex-wrap gap-2">
                 <HeroBadge label={snapshot.metadata.sourceFile} prefix="source:" />
@@ -345,7 +345,7 @@ export function DashboardShell({ snapshot }: DashboardShellProps) {
 
               <div className="grid gap-6 xl:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)] xl:items-end">
                 <div>
-                  <h1 className="font-display text-[2.7rem] font-light leading-[0.98] tracking-[-0.025em] text-[var(--paper)] md:text-[4rem] xl:text-[4.4rem]">
+                  <h1 className="font-display text-[2.05rem] font-light leading-[1.02] tracking-[-0.025em] text-[var(--paper)] sm:text-[2.7rem] sm:leading-[0.98] md:text-[4rem] xl:text-[4.4rem]">
                     Understanding
                     <br />
                     <em className="mx-2 font-normal italic text-[var(--accent)]">
@@ -365,7 +365,7 @@ export function DashboardShell({ snapshot }: DashboardShellProps) {
                     </span>
                     .
                   </h1>
-                  <p className="mt-4 max-w-3xl text-[0.94rem] leading-7 text-[#c9c1af]">
+                  <p className="mt-4 max-w-3xl text-[0.86rem] leading-6 text-[#c9c1af] sm:text-[0.94rem] sm:leading-7">
                     A precomputed snapshot from raw events. Below you move from
                     <b className="font-semibold text-[var(--paper)]"> global context</b> to
                     <b className="font-semibold text-[var(--paper)]"> regional pattern</b> to
@@ -374,7 +374,7 @@ export function DashboardShell({ snapshot }: DashboardShellProps) {
                     {" \u2014 "}in that order, without leaving the page.
                   </p>
 
-                  <div className="mt-6 grid gap-[1px] overflow-hidden rounded-[12px] bg-[var(--dark-line)] md:grid-cols-3">
+                  <div className="mt-6 grid gap-[1px] overflow-hidden rounded-[12px] bg-[var(--dark-line)] sm:grid-cols-2 md:grid-cols-3">
                     <HeroMetricCard
                       delta={`\u25B2 2.1 pp`}
                       label="Purchase rate"
@@ -1151,7 +1151,7 @@ function HeroLeaderRow({
 
   return (
     <button
-      className="grid w-full grid-cols-[28px_1fr_auto_auto] items-center gap-2 bg-[var(--dark-2)] px-4 py-3 text-left transition hover:bg-[var(--dark-3)]"
+      className="grid w-full grid-cols-[24px_1fr_auto] items-center gap-2 bg-[var(--dark-2)] px-3 py-3 text-left transition hover:bg-[var(--dark-3)] sm:grid-cols-[28px_1fr_auto_auto] sm:px-4"
       onClick={onOpen}
       type="button"
     >
@@ -1162,7 +1162,7 @@ function HeroLeaderRow({
         {formatUserCode(user.userId)}
       </div>
       <div
-        className="rounded-full border border-[var(--dark-line)] px-2 py-0.5 font-mono-ui text-[0.6rem]"
+        className="hidden rounded-full border border-[var(--dark-line)] px-2 py-0.5 font-mono-ui text-[0.6rem] sm:block"
         style={{ color: region.color }}
       >
         {region.code}
@@ -1189,9 +1189,9 @@ function SectionHeader({
     <div className="mb-4 flex flex-col gap-3 lg:flex-row lg:items-baseline lg:justify-between">
       <div className="flex items-baseline gap-3">
         <span className="font-mono-ui text-[0.68rem] text-[var(--muted)]">{index}</span>
-        <h2 className="font-display text-[1.7rem] font-normal tracking-[-0.02em] text-[var(--ink)]">
+        <h2 className="font-display text-[1.35rem] font-normal tracking-[-0.02em] text-[var(--ink)] sm:text-[1.7rem]">
           {title}{" "}
-          <em className="font-light italic text-[var(--ink-3)]">{`\u2014 ${subtitle}`}</em>
+          <em className="block pt-0.5 font-light italic text-[var(--ink-3)] sm:inline sm:pt-0">{`\u2014 ${subtitle}`}</em>
         </h2>
       </div>
       <div className="max-w-[420px] text-sm leading-6 text-[var(--muted)] lg:text-right">

@@ -74,12 +74,12 @@ export function UserDrawer({ user, onClose }: UserDrawerProps) {
         className="fixed inset-y-0 right-0 z-[110] flex w-full max-w-[520px] flex-col border-l border-[var(--line)] bg-[var(--paper)] shadow-[-20px_0_60px_-20px_rgba(0,0,0,0.25)]"
         role="dialog"
       >
-        <div className="flex items-start justify-between bg-[var(--ink)] px-6 py-5 text-[var(--paper)]">
+        <div className="flex items-start justify-between bg-[var(--ink)] px-4 py-4 text-[var(--paper)] sm:px-6 sm:py-5">
           <div>
             <div className="font-mono-ui text-[0.62rem] uppercase tracking-[0.2em] text-[var(--accent)]">
               {"User detail \u00B7 explainability"}
             </div>
-            <div className="mt-1 font-display text-[2rem] font-medium tracking-[-0.02em]">
+            <div className="mt-1 font-display text-[1.6rem] font-medium tracking-[-0.02em] sm:text-[2rem]">
               {formatUserCode(user.userId)}
             </div>
             <div className="mt-1 font-mono-ui text-[0.68rem] text-[#8f8777]">
@@ -98,10 +98,10 @@ export function UserDrawer({ user, onClose }: UserDrawerProps) {
           </button>
         </div>
 
-        <div className="flex-1 overflow-auto px-6 py-6">
-          <div className="mb-6 rounded-[14px] bg-[var(--ink)] px-5 py-5 text-[var(--paper)]">
-            <div className="grid grid-cols-[auto_1fr] items-center gap-5">
-              <div className="font-display text-[3.8rem] font-normal leading-none tracking-[-0.04em] text-[var(--accent)]">
+        <div className="flex-1 overflow-auto px-4 py-4 sm:px-6 sm:py-6">
+          <div className="mb-6 rounded-[14px] bg-[var(--ink)] px-4 py-4 text-[var(--paper)] sm:px-5 sm:py-5">
+            <div className="grid grid-cols-1 gap-2 sm:grid-cols-[auto_1fr] sm:items-center sm:gap-5">
+              <div className="font-display text-[2.7rem] font-normal leading-none tracking-[-0.04em] text-[var(--accent)] sm:text-[3.8rem]">
                 {user.engagementScore.toFixed(3)}
               </div>
               <div>
@@ -124,7 +124,7 @@ export function UserDrawer({ user, onClose }: UserDrawerProps) {
           </div>
 
           <DrawerSection title="Raw metrics">
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
               <MetricBox
                 label="Session duration"
                 raw="sessionDurationSec"
@@ -184,7 +184,7 @@ export function UserDrawer({ user, onClose }: UserDrawerProps) {
                 return (
                   <div
                     key={item.label}
-                    className="grid grid-cols-[110px_1fr_58px] items-center gap-3"
+                    className="grid grid-cols-[90px_1fr_52px] items-center gap-2 sm:grid-cols-[110px_1fr_58px] sm:gap-3"
                   >
                     <div className="font-mono-ui text-[0.68rem] text-[var(--ink-2)]">
                       {item.label}
@@ -195,7 +195,7 @@ export function UserDrawer({ user, onClose }: UserDrawerProps) {
                         style={{ backgroundColor: item.color, width: `${width}%` }}
                       />
                     </div>
-                    <div className="text-right font-mono-ui text-[0.72rem] text-[var(--ink)]">
+                    <div className="text-right font-mono-ui text-[0.68rem] text-[var(--ink)] sm:text-[0.72rem]">
                       +{item.contribution.toFixed(4)}
                     </div>
                   </div>
